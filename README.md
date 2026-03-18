@@ -23,6 +23,6 @@
 [google](https://www.google.com/)
 
 ## The different GIF
-![fox](https://tenor.com/bUrnX.gif)
+![fox](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3l6bmRkNThwejdsNWw5cjd4NHR5cnZ0M3FhMmFyODE3bjU5ejljcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/H56Aw2OYxgkpi/giphy.gif)
 
 A meme that captures how I currently feel about my university studies is ![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)
