@@ -74,6 +74,6 @@ The above codes produce the comparisons and results by observing in daily life s
 
 The reason of data of average_speed by observing on the road may caused by individuals licence ownership.
 
-There may be some bias in observations caused by their gender, because female is more sensitive than male in general.
+There may be some limitations during the data collection to the relatively small sample size.
 
 
