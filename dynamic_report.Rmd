@@ -1,0 +1,79 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+body {
+  font-family: Arial;
+  line-height: 1.75;
+}
+
+h2 {
+  color: blue;
+}
+
+p {
+  font-size: 18px
+}
+```
+
+## Analysis of Gender, Licence Ownership and Average Speed by observing in Daily Life
+
+This report explores the characteristics of individuals in daily life observations, focusing on gender distribution and licence ownership.
+Analysis and summary bar charts and statistics used to better understand the data.
+
+```{r}
+library(tidyverse)
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQdjP0Hl5k6QbgxoYmfEScv7bRRQ9yhn0YRkhL9SagE0ryTqOfB8lgpexDRRsNVVWMFJ0OYteFdUoUa/pub?gid=2105482907&single=true&output=csv")
+
+# Change the name of columns
+latest_data <- logged_data %>%
+  rename(gender = 2,
+         licence = 3,
+         average_speed = 4)
+
+# To find how many rows in gender
+length(latest_data$gender)
+
+# What is the maximum value in average_speed
+max(latest_data$average_speed, na.rm = TRUE)
+```
+```markdown
+There are `r length(latest_data$gender)` sample size totally, which is a little bit small so that cause some bias.
+
+The max average_speed is `r max(latest_data$average_speed, na.rm = TRUE)` km/h, which may not precise by observing because there may be no significant differences when speed over 80km/h.
+```{r}
+# To show the bar chart using gender
+latest_data %>%
+  ggplot() +
+    geom_bar(aes(x = gender, fill = gender)) +
+  labs(title = "Distribution of Gender",
+       subtitle = "Comparison of individuals by gender in the data",
+       caption = "STATS 220 Project2",
+       x = "gender",
+       y = "count")
+
+# To show the bar chart using licence
+latest_data %>%
+  ggplot() +
+    geom_bar(aes(x = licence, fill = licence)) +
+  labs(title = "Distribution of Licence",
+       subtitle = "Comparison of individuals by licence ownership in the data",
+       caption = "STATS 220 Project2",
+       x = "licence",
+       y = "total")
+```
+
+The above codes produce the comparisons and results by observing in daily life selected for this report.
+
+The reason of data of average_speed by observing on the road may caused by individuals licence ownership.
+
+There may be some bias in observations caused by their gender, because female is more sensitive than male in general.
+
+
